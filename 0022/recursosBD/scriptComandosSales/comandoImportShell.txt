@@ -1,0 +1,33 @@
+-- comando en la shell de postgres
+-- seleccionar la base de datos para insertar registros
+-- \c nombreBaseDeDatos
+-- comandos para insertar registros desde los archivos csv adjuntos
+-- store
+-- \COPY store FROM 'path archivo' WITH (FORMAT CSV, DELIMITER ';', HEADER);
+-- salesterritory
+-- \COPY salesterritory(territoryid, name, countryregioncode, "group", salesytd, saleslastyear, costytd, costlastyear) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- person
+-- \COPY person(businessentityid, persontype, namestyle, title, firstname, middlename, lastname, suffix, emailpromotion) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- customer
+-- \COPY customer(customerid, personid, storeid, territoryid) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- productcategory
+-- \COPY productcategory(productcategoryid, name) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- productsubcategory
+-- \COPY productsubcategory(productcategoryid, productsubcategoryid, name) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- creditcard
+-- \COPY creditcard(creditcardid, cardtype, cardnumber, expmonth, expyear) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- personcreditcard
+-- \COPY personcreditcard(businessentityid, creditcardid) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- product
+-- \COPY product(productid, name, productnumber, color, safetystocklevel, reorderpoint, standardcost, listprice, size, sizeunitmeasurecode, weight, daystomanufacture, productsubcategoryid) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- address
+-- \COPY address(addressid, addressline1, addressline2, city, postalcode) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- salesorderheader
+-- \COPY salesorderheader(salesorderid, revisionnumber, orderdate, duedate, shipdate, status, onlineorderflag, purchaseordernumber, accountnumber, customerid, territoryid, shiptoaddressid, creditcardid, subtotal, taxamt, freight, totaldue, "comment") FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+-- salesorderdetails
+-- \COPY salesorderdetails(salesorderdetailid, salesorderid, productid, carriertrackingnumber, orderqty, specialofferid, unitprice, unitpricediscount) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
+
+-- Comando generales, no es necesario ejecutarlos, son solo ejemplos
+-- \COPY nombretabla FROM 'path archivo' WITH (FORMAT CSV, DELIMITER ';', HEADER);
+-- \COPY nombretabla(BusinessEntityID, DepartmentID, ShiftID, StartDate, EndDate, ModifiedDate) FROM 'path archivo' WITH (FORMAT CSV, DeLIMITER ';', HEADER);
+-- \COPY nombretabla(BusinessEntityID, DepartmentID, ShiftID, StartDate, EndDate, ModifiedDate) FROM 'path archivo' WITH (FORMAT CSV, null "NULL", DeLIMITER ';', HEADER);
